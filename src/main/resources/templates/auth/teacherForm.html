@@ -1,0 +1,23 @@
+{{>/layout/header}}
+
+<div class="container">
+    <form action="/auth/teacher" method="post">
+        <div class="mb-3 mt-3">
+            <input type="text" class="form-control" placeholder="Enter name" name="name">
+        </div>
+        <div class="mb-3">
+            <input type="file" class="form-control" placeholder="Enter stamp" name="stamp">
+        </div>
+
+        <div class="mb-3">
+            <select name="companyId" class="form-control">
+                {{#companys}}
+                <option value="{{id}}">{{name}}</option>
+                {{/companys}}
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">추가정보입력 완료</button>
+    </form>
+</div>
+
+{{>/layout/footer}}

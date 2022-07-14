@@ -1,0 +1,44 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /
+    encoding:
+      charset: utf-8
+    session:
+      timeout: 30
+
+spring:
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: ${google.username}
+    password: ${google.password}
+    properties:
+      mail:
+        smtp:
+          starttls:
+            enable: true
+            required: true
+          auth: true
+  mustache:
+    expose-session-attributes: true
+  datasource:
+      url: ${rds.host}:${rds.port}/${rds.db.name}
+      driver-class-name: ${rds.driver}
+      username: ${rds.username}
+      password: ${rds.password}
+
+  jpa:
+    open-in-view: true
+    hibernate:
+      ddl-auto: none
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+
+file:
+  path: /home/ubuntu/upload/
+
+logging:
+  level:
+    '[org.springframework.web]': INFO
+    '[org.hibernate]': INFO

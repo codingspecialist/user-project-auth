@@ -1,0 +1,28 @@
+{{>/layout/header}}
+
+<div class="container">
+    <form action="/auth/join" method="post">
+        <div class="mb-3 mt-3">
+            <input type="text" class="form-control" placeholder="Enter username" name="username">
+        </div>
+        <div class="mb-3">
+            <input type="password" class="form-control" placeholder="Enter password" name="password">
+        </div>
+        <div class="mb-3">
+            <input type="email" class="form-control" placeholder="Enter email" name="email">
+        </div>
+
+
+        <div class="mb-3">
+            <select name="requestRole" class="form-control">
+                <option value="REQUEST_STUDENT">학생</option>
+                <option value="REQUEST_TEACHER">강사</option>
+                <option value="REQUEST_EMP">직원</option>
+            </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary">회원가입 완료</button>
+    </form>
+</div>
+
+{{>/layout/footer}}
